@@ -1,0 +1,177 @@
+Body {
+  Margin: 0;
+  Font-family: ‘Poppins’, sans-serif;
+  Display: flex;
+  Justify-content: center;
+  Align-items: center;
+  Min-height: 100vh;
+  Background: linear-gradient(135deg, #4facfe, #00f2fe); /* azul elegante degradado */
+  Overflow: hidden;
+}
+
+/* Contenedor general */
+.container {
+  Background: rgba(255,255,255,0.95);
+  Padding: 25px;
+  Border-radius: 20px;
+  Box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  Text-align: center;
+  Width: 90%;
+  Max-width: 600px;
+  Max-height: 90vh;
+  Overflow-y: auto;
+  Display: none;
+}
+
+/* Botones e inputs */
+Input, button, textarea {
+  Width: 100%;
+  Padding: 10px;
+  Margin: 10px 0;
+  Border-radius: 10px;
+  Border: 1px solid #ccc;
+  Font-size: 16px;
+}
+
+Textarea {
+  Height: 80px;
+}
+
+Button {
+  Background: linear-gradient(135deg, #5f2c82, #8f7b9c);
+  Color: white;
+  Border: none;
+  Transition: 0.3s;
+  Cursor: pointer;
+  Font-weight: bold;
+}
+
+Button:hover {
+  Transform: scale(1.05);
+}
+
+/* Botón volver */
+.volver {
+  Background: #f06292;
+}
+
+/* Animaciones entrada */
+.entrada {
+  Opacity: 0;
+  Animation: aparecerEntrada 1.2s forwards;
+}
+
+.izquierda {
+  Animation-name: entradaIzquierda;
+}
+
+.derecha {
+  Animation-name: entradaDerecha;
+}
+
+@keyframes entradaIzquierda {
+  From { transform: translateX(-100px); opacity: 0; }
+  To { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes entradaDerecha {
+  From { transform: translateX(100px); opacity: 0; }
+  To { transform: translateX(0); opacity: 1; }
+}
+
+/* Imágenes Clash Royale */
+.imagenes-inicio {
+  Margin-bottom: 20px;
+}
+
+.imagen-arriba {
+  Width: 80%;
+  Border-radius: 15px;
+  Box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  Margin-bottom: 15px;
+}
+
+.imagenes-abajo {
+  Display: flex;
+  Justify-content: space-around;
+}
+
+.imagen-abajo {
+  Width: 40%;
+  Border-radius: 15px;
+  Box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.aparecer-fondo {
+  Animation: salirFondo 1.5s ease forwards;
+}
+
+@keyframes salirFondo {
+  From { transform: translateY(100px); opacity: 0; }
+  To { transform: translateY(0); opacity: 1; }
+}
+
+/* Árbol de meses (zig-zag) */
+.arbol {
+  Display: none;
+  Flex-direction: column;
+  Align-items: center;
+  Gap: 25px;
+  Margin: 20px 0;
+}
+
+.mes-btn {
+  Position: relative;
+  Width: 120px;
+  Height: 120px;
+  Border-radius: 50%;
+  Overflow: hidden;
+  Border: 3px solid #fff;
+  Box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  Cursor: pointer;
+  Transition: transform 0.3s;
+}
+
+.mes-btn:nth-child(even) {
+  Align-self: flex-end;
+  Margin-right: 50px;
+}
+
+.mes-btn:nth-child(odd) {
+  Align-self: flex-start;
+  Margin-left: 50px;
+}
+
+.mes-btn img {
+  Width: 100%;
+  Height: 100%;
+  Object-fit: cover;
+}
+
+.mes-btn:hover {
+  Transform: scale(1.15) rotate(-3deg);
+}
+
+/* Nombre de los meses */
+.nombre-mes {
+  Position: absolute;
+  Bottom: 5px;
+  Left: 50%;
+  Transform: translateX(-50%);
+  Color: white;
+  Font-weight: bold;
+  Text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  Background: rgba(0,0,0,0.3);
+  Padding: 2px 6px;
+  Border-radius: 5px;
+  Font-size: 14px;
+}
+
+/* Imagen del mes */
+#imagenMes {
+  Max-height: 250px;
+  Width: auto;
+  Border-radius: 15px;
+  Box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  Margin-bottom: 15px;
+}

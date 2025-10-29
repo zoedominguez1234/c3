@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calendario Socioemocional</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Pantalla de registro -->
+  <div id="registro" class="container registro-azul fade-in" style="display:block;">
+    <!-- imágenes "emergentes" desde el fondo -->
+    <div class="registro-bg">
+      <img src="clash_top.jpg" alt="clash top" class="registro-img registro-img-top" />
+      <img src="clash_left.jpg" alt="clash left" class="registro-img registro-img-left" />
+      <img src="clash_right.jpg" alt="clash right" class="registro-img registro-img-right" />
+    </div>
+
+    <h1 class="registro-titulo">Registro Personal</h1>
+
+    <div class="registro-form">
+      <input type="text" id="nombre" placeholder="Nombre completo" required class="slide-in-left" />
+      <input type="email" id="correo" placeholder="Correo electrónico" required class="slide-in-right" />
+      <input type="text" id="grupo" placeholder="Grupo o semestre" required class="slide-in-left" />
+      <button onclick="guardarDatos()" class="btn-cta slide-in-right">Guardar y continuar</button>
+    </div>
+  </div>
+
+  <!-- Árbol de meses -->
+  <div id="arbol" class="arbol fade-in" style="display:none;">
+    <!-- paisaje CSS estará en style.css -->
+    <div class="arbol-inner">
+      <div class="arbol-clash clash-top"><img src="clash_top.jpg" alt="clash top"></div>
+      <!-- los botones en zig-zag -->
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('enero')"><img src="enero.jpg" alt="Enero"><span class="nombre-mes">Enero</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('febrero')"><img src="febrero.jpg" alt="Febrero"><span class="nombre-mes">Febrero</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('marzo')"><img src="marzo.jpg" alt="Marzo"><span class="nombre-mes">Marzo</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('abril')"><img src="abril.jpg" alt="Abril"><span class="nombre-mes">Abril</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('mayo')"><img src="mayon.jpg" alt="Mayo"><span class="nombre-mes">Mayo</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('junio')"><img src="junio.jpg" alt="Junio"><span class="nombre-mes">Junio</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('julio')"><img src="julio.jpg" alt="Julio"><span class="nombre-mes">Julio</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('agosto')"><img src="agoston.jpg" alt="Agosto"><span class="nombre-mes">Agosto</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('septiembre')"><img src="septiembres.jpg" alt="Septiembre"><span class="nombre-mes">Septiembre</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('octubre')"><img src="octubre.jpg" alt="Octubre"><span class="nombre-mes">Octubre</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('noviembre')"><img src="noviembre12.jpg" alt="Noviembre"><span class="nombre-mes">Noviembre</span></div></div>
+      <div class="mes-row"><div class="mes-btn" onclick="mostrarMes('diciembre')"><img src="diciembre.jpg" alt="Diciembre"><span class="nombre-mes">Diciembre</span></div></div>
+
+      <div class="arbol-clash clash-left"><img src="clash_left.jpg" alt="clash left"></div>
+      <div class="arbol-clash clash-right"><img src="clash_right.jpg" alt="clash right"></div>
+    </div>
+  </div>
+
+  <!-- Contenedor del mes -->
+  <div id="infoMes" class="container info-mes fade-in" style="display:none;">
+    <img id="imagenMes" src="" alt="" />
+    <h2 id="tituloMes"></h2>
+    <div id="descripcionMes" class="descripcion-mes"></div>
+
+    <textarea id="sugerencia" placeholder="Escribe tu sugerencia aquí..."></textarea>
+    <div class="botones-mes">
+      <button onclick="guardarSugerencia()" class="btn-cta">Enviar sugerencia</button>
+      <button class="volver btn-ghost" onclick="volverArbol()">Volver al árbol</button>
+    </div>
+  </div>
+
+  <!-- Firebase scripts si los usas (no obligatorio) -->
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script>
+
+  <script src="KHWUFGWFRWL.js"></script>
+</body>
+</html>
